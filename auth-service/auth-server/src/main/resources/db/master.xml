@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="/changelog/20230920-1139-role.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/20230920-1138-account.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/20230928-1122-user.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/20230928-1123-seller.xml" relativeToChangelogFile="true"/>
+    <include file="/changelog/20230928-1124-customer.xml" relativeToChangelogFile="true"/>
+
+    <!--    add some data-->
+    <include file="/data/data-roles.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

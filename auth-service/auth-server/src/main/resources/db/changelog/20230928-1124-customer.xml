@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="20230928-1124-customer" author="MinhHieu">
+        <createTable tableName="customers">
+            <column name="id" type="VARCHAR(200)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="bonus_coin" type="DOUBLE(50,2)" />
+            <column name="status" type="int" />
+            <column name="seller_phone_number" type="VARCHAR(200)" />
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="id"
+                                 baseTableName="customers"
+                                 constraintName="fk_user_customer"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+    </changeSet>
+</databaseChangeLog>
