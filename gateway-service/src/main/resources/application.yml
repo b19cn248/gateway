@@ -6,9 +6,6 @@ spring:
     name: gateway-service
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
       httpclient:
         connect-timeout: 10000
         response-timeout: 7s
@@ -23,9 +20,9 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/**
+            - Path=/auth/**
           filters:
-            - RewritePath=/(?<path>.*), /$\{path}
+            - RewritePath=/auth/(?<path>.*), /$\{path}
         - id: employee-service
           uri: lb://employee-service
           predicates:
@@ -52,5 +49,5 @@ springdoc:
       - name: department
         url: /v3/api-docs/department
       - name: auth
-        url: /v3/api-docs/auth
+        url: /v3/api-docs
 
