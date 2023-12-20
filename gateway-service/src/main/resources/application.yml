@@ -5,9 +5,10 @@ spring:
   application:
     name: gateway-service
   cloud:
-    loadbalancer:
-      configurations: health-check
     gateway:
+      discovery:
+        locator:
+          enabled: true
       httpclient:
         connect-timeout: 10000
         response-timeout: 7s
@@ -22,9 +23,9 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/auth/**
+            - Path=/**
           filters:
-            - RewritePath=/auth/(?<path>.*), /$\{path}
+            - RewritePath=/(?<path>.*), /$\{path}
         - id: employee-service
           uri: lb://employee-service
           predicates:
