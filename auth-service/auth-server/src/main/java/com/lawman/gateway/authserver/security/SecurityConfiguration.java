@@ -37,7 +37,7 @@ public class SecurityConfiguration {
           .authorizeHttpRequests(
                 request -> request
                       .requestMatchers(REQUEST_WITHOUT_AUTHENTICATION).permitAll()
-                      .anyRequest().authenticated()
+                      .anyRequest().permitAll()
           )
           .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
           .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

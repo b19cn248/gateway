@@ -1,4 +1,4 @@
-package com.lawman.gateway.authserver;
+package com.lawman.gateway.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class AuthServerApplication {
+public class GatewayServiceApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(AuthServerApplication.class, args);
+    SpringApplication.run(GatewayServiceApplication.class, args);
   }
 
 }
