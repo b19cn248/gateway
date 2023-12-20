@@ -28,7 +28,7 @@ spring:
       host: localhost
       port: 6378
 server:
-  port: 8088
+  port: 8083
 application:
   token:
     key: ShopSport123@tjukjgkgfyhvjyjrtcrftxgrxjuyhzygtxgresxcx
